@@ -1,11 +1,13 @@
-//Importar una función y guardarla en una variable
-const math= require('./math.js');
-/*
-console.log(math.suma(7, 2));
-console.log(math.resta(7, 2));
-console.log(math.mult(7, 2));
-console.log(math.div(7, 2));
-console.log(math.div(2, 0));
+//Crear archivo con node
 
- */
-console.log(math)
+const fileSystem = require('fs');
+
+fileSystem.writeFile('./texto.txt', 'Linea1', function (err){
+    if(err){
+        console.log(err)
+    }else {
+        console.log('Archivo creado')
+    }
+})
+console.log('Ultima linea de código')
+
