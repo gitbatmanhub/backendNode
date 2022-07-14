@@ -1,12 +1,15 @@
-//Leer archivo con node
-const fileSystem = require('fs');
+'use strict'
+const http = require('http');
 
-fileSystem.readFile('./texto.txt', function (err, data) {
-    if (err){
-        console.log(err);
-    }else{
-        console.log(data.toString())
+const handleServer= function (req, res) {
+    res.writeHead(200, {'Content-type': 'text/html'});
+    res.write('<h1>This is text</h1>');
+    res.end();
+}
 
-    }
 
+const server= http.createServer(handleServer);
+
+    server.listen(3000, function () {
+    console.log('Server listen in port 3000')
 })
