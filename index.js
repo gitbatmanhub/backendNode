@@ -1,13 +1,12 @@
-//Crear archivo con node
-
+//Leer archivo con node
 const fileSystem = require('fs');
 
-fileSystem.writeFile('./texto.txt', 'Linea1', function (err){
-    if(err){
-        console.log(err)
-    }else {
-        console.log('Archivo creado')
-    }
-})
-console.log('Ultima linea de código')
+fileSystem.readFile('./texto.txt', function (err, data) {
+    if (err){
+        console.log(err);
+    }else{
+        console.log(data.toString())
 
+    }
+
+})
